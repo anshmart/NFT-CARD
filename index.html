@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            justify-items: center;
+            align-items: center;
+            background: hsl(217, 54%, 11%);
+        }
+        
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        .container {
+            padding: 0 1em;
+            max-width: 700px;
+            margin-top: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+        }
+        
+        @media screen and (max-width: 375px) {
+            .container {
+                margin-top: 4rem;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: auto;
+                padding: 0 1em;
+                max-width: 700px;
+                margin: auto;
+            }
+        }
+        
+        .card-body {}
+        
+        .card {
+            width: 300px;
+            height: 510px;
+            background: hsl(216, 50%, 16%);
+            border-radius: 3%;
+            padding: 0;
+            margin: auto;
+        }
+        
+        .image-cont {
+            width: 100%;
+            max-width: 260px;
+            position: relative;
+        }
+        
+        .equi-img {
+            width: 260px;
+            position: relative;
+            top: 1.2rem;
+            border-radius: 4%;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 1.1rem;
+            background: black;
+            background: rgba(135, 206, 235, 0.3);
+            /* Black see-through */
+            color: #f1f1f1;
+            border-radius: 4%;
+            width: 260px;
+            height: 262px;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .image-cont:hover .overlay {
+            opacity: 1;
+        }
+        
+        .eye {
+            position: relative;
+            top: 7rem;
+        }
+        
+        .equi {
+            position: relative;
+            top: 1rem;
+            left: 1rem;
+            color: hsl(0, 0%, 100%);
+            font-family: 'Outfit', sans-serif;
+            color: hsl(178, 100%, 50%);
+        }
+        
+        .detail {
+            width: 17rem;
+            margin: 0;
+            padding-left: 10px;
+            margin-right: 10px;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        
+        .e-det {
+            position: relative;
+            top: 1rem;
+            left: 1rem;
+            color: hsl(215, 51%, 70%);
+            font-size: small;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+        }
+        
+        .dim {
+            position: relative;
+            top: 2rem;
+            left: 1rem;
+        }
+        
+        .eth-name {
+            position: relative;
+            left: 2.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: small;
+            font-weight: 600;
+            color: hsl(178, 100%, 50%);
+        }
+        
+        .clock {
+            position: relative;
+            bottom: 1.9rem;
+            left: 11.5rem;
+        }
+        
+        .time {
+            position: relative;
+            bottom: 3.9rem;
+            left: 13rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: small;
+            color: hsl(178, 100%, 50%);
+        }
+        
+        hr {
+            width: 16rem;
+            position: relative;
+            bottom: 3.4rem;
+            height: 1px;
+            border-width: 0;
+            color: hsl(215, 32%, 27%);
+            background-color: hsl(215, 32%, 27%);
+        }
+        
+        .avator-box {
+            display: contents;
+        }
+        
+        .avator {
+            position: relative;
+            bottom: 3rem;
+            left: 1.9rem;
+            width: 1.9rem;
+            border: 1.9px solid whitesmoke;
+            border-radius: 50%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: hsl(215, 51%, 70%);
+        }
+        
+        a .name {
+            position: relative;
+            bottom: 5.5rem;
+            left: 5.1rem;
+            font-size: small;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-body">
+            <div class="card">
+                <div align="center">
+                    <a href="">
+                        <div class="image-cont">
+                            <img src="images\image-equilibrium.jpg" alt="equilibrium" class="equi-img">
+                            <div class="overlay">
+                                <svg class="eye" width="48" height="48" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h48v48H0z"/><path d="M24 9C14 9 5.46 15.22 2 24c3.46 8.78 12 15 22 15 10.01 0 18.54-6.22 22-15-3.46-8.78-11.99-15-22-15Zm0 25c-5.52 0-10-4.48-10-10s4.48-10 10-10 10 4.48 10 10-4.48 10-10 10Zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6Z" fill="#FFF" fill-rule="nonzero"/></g></svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--detail-->
+                <div class="detail">
+                    <a href="">
+                        <p class="equi"> Equilibrium #3429</p>
+                    </a>
+                    <p class="e-det">Our Equilibrium collection promotes balance and calm.</p>
+
+                    <div class="ethcont">
+                        <svg class="dim" width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="#00FFF8"/></svg>
+                        <p class="eth-name"> 0.041 ETH</p>
+
+                        <svg class="clock" width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="#8BACD9"/></svg>
+                        <p class="time"> 3 days left</p>
+                    </div>
+
+
+                </div>
+
+                <hr>
+                <div class="avator-box">
+                    <img class="avator" src="images\image-avatar.png" alt="">
+                    <a href="">
+                        <p class="name"> Creation of Jules Wyvern</p>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--
+  Equilibrium #3429
+
+  Our Equilibrium co
+  llection promotes balance and calm.
+
+  0.041 ETH
+  3 days left
+  
+  Creation of Jules Wyvern
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  -->
+</body>
+
+</html>
